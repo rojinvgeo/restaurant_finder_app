@@ -9,7 +9,7 @@ This app demonstrates API integration, state management with Provider, theming, 
 
 - Fetch and display restaurant list from API
 - Beautiful, responsive card-based UI
-- Search bar to filter restaurants by name or address
+- Search bar to filter restaurants by name
 - Clean theming with Flutter Material Design
 - Works on Android and iOS
 
