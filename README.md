@@ -19,4 +19,20 @@ This app demonstrates API integration, state management with Provider, theming, 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/<YOUR_USERNAME>/flutter_restaurant_finder.git
+git clone https://github.com/rojinvgeo/restaurant_finder_app.git
+```
+2. Navigate into the project directory:
+```bash
+cd restaurant_finder_app
+```
+3. Get dependencies:
+```bash
+flutter pub get
+```
+4. flutter run:
+```bash
+flutter run
+```
+
+
+
