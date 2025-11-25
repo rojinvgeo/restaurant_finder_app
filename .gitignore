@@ -86,23 +86,26 @@ ios/Runner/GeneratedPluginRegistrant.*
 *.tmp
 
 
-# Flutter
-build/
+# Flutter/Dart
 .dart_tool/
+.packages
+.pub-cache/
+build/
 .flutter-plugins
 .flutter-plugins-dependencies
-.packages
 
-# Firebase Sensitive Files
-lib/firebase_options.dart
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Firebase (DO NOT PUSH)
 android/app/google-services.json
 ios/Runner/GoogleService-Info.plist
+macos/Runner/GoogleService-Info.plist
 
-# VSCode / IntelliJ
-.idea/
-.vscode/
-
-# Other sensitive files
-*.env
-*.key
-*.jks
+# Hive local DB files
+*.hive
+*.lock
