@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/restaurant_provider.dart';
+import '../screens/restaurant_detail_screen.dart';
+
 
 class RestaurantListScreen extends StatefulWidget {
   @override
@@ -57,6 +59,15 @@ class _RestaurantListScreenState extends State<RestaurantListScreen> {
                       trailing: r.closed
                           ? Icon(Icons.close, color: Colors.red)
                           : Icon(Icons.check, color: Colors.green),
+                          
+                        onTap: () {
+                           Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => RestaurantDetailScreen(restaurant: r),
+                            ),
+                          );
+                        },    
                     );
                   },
                 );

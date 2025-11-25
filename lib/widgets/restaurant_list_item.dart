@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/restaurant.dart';
+import '../providers/restaurant_provider.dart';
 
 class RestaurantListItem extends StatelessWidget {
   final Restaurant restaurant;
@@ -8,6 +10,8 @@ class RestaurantListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<RestaurantProvider>(context);
+
     return Card(
       elevation: 3,
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -32,6 +36,8 @@ class RestaurantListItem extends StatelessWidget {
           restaurant.address,
           style: TextStyle(color: Colors.grey.shade700),
         ),
+
+        // ⭐ UPDATED TRAILING: Rating + Favorite Button
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -39,6 +45,18 @@ class RestaurantListItem extends StatelessWidget {
             Text(
               restaurant.rating.toString(),
               style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(width: 12),
+
+            // ❤️ FAVORITE BUTTON
+            IconButton(
+              icon: Icon(
+                provider.isFavorite(restaurant.id)
+                    ? Icons.favorite
+                    : Icons.favorite_border,
+                color: Colors.red,
+              ),
+              onPressed: () => provider.toggleFavorite(restaurant.id),
             ),
           ],
         ),

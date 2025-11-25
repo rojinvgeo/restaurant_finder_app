@@ -84,3 +84,25 @@ ios/Runner/GeneratedPluginRegistrant.*
 *.DS_Store
 *.swp
 *.tmp
+
+
+# Flutter
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+
+# Firebase Sensitive Files
+lib/firebase_options.dart
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
+# VSCode / IntelliJ
+.idea/
+.vscode/
+
+# Other sensitive files
+*.env
+*.key
+*.jks

@@ -1,10 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'screens/restaurant_list_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+import 'screens/restaurant_detail_screen.dart';
 import 'providers/restaurant_provider.dart';
 import 'theme/app_theme.dart';
+import 'screens/login_screen.dart';
+import 'screens/restaurant_list_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Firebase
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // Hive
+  await Hive.initFlutter();
+  await Hive.openBox('favorites');
+
   runApp(
     MultiProvider(
       providers: [
@@ -26,9 +43,20 @@ class _RestaurantFinderAppState extends State<RestaurantFinderApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Restaurant Finder',
       debugShowCheckedModeBanner: false,
       theme: isDark ? AppTheme.dark : AppTheme.light,
-      home: RestaurantListScreen(),
+
+      // Default screen
+      initialRoute: '/login',
+
+      routes: {
+        '/login': (context) => LoginScreen(),
+        '/list': (context) => RestaurantListScreen(),
+
+        // ❌ DO NOT PUT DETAIL PAGE HERE
+        // because it needs a Restaurant object
+      },
     );
   }
 }
