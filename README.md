@@ -35,4 +35,13 @@ flutter run
 ```
 
 
+## Next Steps / Backlog 📝
+
+- Add Google Maps integration to open restaurant locations
+- Implement user profile and settings
+- Add push notifications for favorite restaurants
+- Improve UI/UX for tablets and landscape mode
+- Add advanced search filters (cuisine, rating, distance)
+
+
 
