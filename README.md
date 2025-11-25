@@ -1,19 +1,45 @@
-# Flutter Restaurant Finder 🍔
+# 🍔 Flutter Restaurant Finder App
 
-A mini Capstone project built with **Flutter** to list and search restaurants.  
-This app demonstrates API integration, state management with Provider, theming, and search functionality.
+A mini **Capstone Project** built using **Flutter** to explore, search, and manage restaurants.  
+This updated version now includes **Authentication**, **Hive local storage**, and several UI/UX improvements.
+
+---
+
+## ✨ Latest Features (Updated)
+
+### 🔐 Login & Authentication
+- Added **Login Screen** with form validation  
+- Secure user session handling  
+- Auto-login using locally stored credentials  
+
+### 🗄️ Hive Local Storage Integration
+- Uses **Hive** for lightweight, fast, and offline storage  
+- Saves login session  
+- Stores recent restaurant search history  
+- Improves app startup time  
+
+### 📝 Improved Search & Filtering
+- Faster search with optimized API calls  
+- Local caching of past results  
+
+### 🎨 UI/UX Enhancements
+- Modern card-based restaurant layout  
+- Smooth animations  
+- Better theme consistency  
+
+### 🔧 Code Improvements
+- Added repository pattern  
+- Improved folder structure  
+- Cleaner Provider-based state management  
 
 ---
 
-## Features ✨
+## 🚀 Core Features
 
-- Fetch and display restaurant list from API
-- Beautiful, responsive card-based UI
-- Search bar to filter restaurants by name
-- Clean theming with Flutter Material Design
-- Works on Android and iOS
-
----
+- Fetch restaurant list from live API  
+- Search by restaurant name  
+- Beautiful, responsive UI  
+- Works on Android
 
 ### Setup Instructions
 
